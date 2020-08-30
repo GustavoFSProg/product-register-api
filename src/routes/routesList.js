@@ -12,7 +12,7 @@ const routeList = [
   routes.get('/', productController.getAll),
   routes.post('/users', usersController.create),
   routes.post('/post', upload.single('image'), productController.create),
-  routes.delete('/del', productController.deleteAll),
+  // routes.delete('/del', productController.deleteAll),
 ]
 
 export default routeList

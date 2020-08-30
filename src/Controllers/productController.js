@@ -13,14 +13,14 @@ async function getAll(req, res) {
   }
 }
 
-async function deleteAll() {
-  try {
-    await productsModel.deleteMany()
-    return res.send('Donw deleteall')
-  } catch (error) {
-    return error
-  }
-}
+// async function deleteAll() {
+//   try {
+//     await productsModel.deleteMany()
+//     return res.send('Donw deleteall')
+//   } catch (error) {
+//     return error
+//   }
+// }
 
 async function create(req, res) {
   try {
@@ -42,4 +42,4 @@ async function create(req, res) {
   }
 }
 
-export default { getAll, create, deleteAll }
+export default { getAll, create }
