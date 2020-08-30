@@ -1,5 +1,7 @@
 import productsModel from '../Models/productModel'
 import multer from 'multer'
+import sharp from 'sharp'
+import fs from 'fs'
 
 async function getAll(req, res) {
   try {
@@ -13,7 +15,7 @@ async function getAll(req, res) {
 
 async function deleteAll() {
   try {
-    await productsModel.deleteAll()
+    await productsModel.deleteMany()
     return res.send('Donw deleteall')
   } catch (error) {
     return error
@@ -36,7 +38,7 @@ async function create(req, res) {
 
     return res.status(201).send({ msg: 'Product created successfully' })
   } catch (error) {
-    return res.status(400).send({ error })
+    return res.status(400).send({ error: error })
   }
 }
 
