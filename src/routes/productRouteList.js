@@ -7,12 +7,12 @@ const routes = new Router()
 
 const upload = multer(uploadsConfig)
 
-const routeList = [
+const productRouteList = [
   routes.get('/', productController.getAll),
   routes.get('/:id', productController.getById),
   routes.post('/post', upload.single('image'), productController.create),
-  routes.put('/update/:id', productController.update),
+  routes.put('/products/update/:id', productController.update),
   // routes.delete('/del', productController.deleteAll),
 ]
 
-export default routeList
+export default productRouteList

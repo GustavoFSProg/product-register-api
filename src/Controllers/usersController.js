@@ -13,6 +13,16 @@ async function getAllUsers(req, res) {
   }
 }
 
+// async function deleteAll(req, res) {
+//   try {
+//     await usersModel.deleteMany()
+
+//     return res.status(200).send({ msg: 'Tudo apagado!!!' })
+//   } catch (error) {
+//     return res.status(400).send({ msg: 'Erro Tudo cagado!!!' })
+//   }
+// }
+
 async function getById(req, res) {
   try {
     const data = await usersModel.findById(req.params.id, 'name email')
@@ -28,7 +38,7 @@ async function update(req, res) {
       $set: {
         name: req.body.name,
         email: req.body.email,
-        password: md5(req.body.password, process.env.GLOBAL_SALT_KEY),
+        // password: md5(req.body.password, process.env.GLOBAL_SALT_KEY),
       },
     })
 

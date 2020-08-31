@@ -5,8 +5,10 @@ const routes = new Router()
 
 const UserRouteList = [
   routes.post('/users', usersController.create),
-  routes.get('/usuarios', usersController.getAllUsers),
+  // routes.delete('/users/del', usersController.deleteAll),
+  routes.get('/users', usersController.getAllUsers),
   routes.get('/users/:id', usersController.getById),
+  routes.put('/users/update/:id', usersController.update),
 ]
 
 export default UserRouteList

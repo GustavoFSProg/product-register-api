@@ -1,7 +1,12 @@
 import { model, Schema } from 'mongoose'
 
 const schema = new Schema({
-  name: String,
+  name: {
+    type: String,
+    unique: true,
+    retquired: true,
+    trim: true,
+  },
   email: String,
   password: String,
 })

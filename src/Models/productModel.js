@@ -1,7 +1,12 @@
 import { model, Schema } from 'mongoose'
 
 const schema = new Schema({
-  title: String,
+  title: {
+    type: String,
+    unique: true,
+    retquired: true,
+    trim: true,
+  },
   image: String,
   price: Number,
   description: String,
