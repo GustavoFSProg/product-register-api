@@ -10,8 +10,10 @@ const upload = multer(uploadsConfig)
 
 const routeList = [
   routes.get('/', productController.getAll),
+  routes.get('/:id', productController.getById),
   routes.post('/users', usersController.create),
   routes.post('/post', upload.single('image'), productController.create),
+  routes.put('/update/:id', productController.update),
   // routes.delete('/del', productController.deleteAll),
 ]
 

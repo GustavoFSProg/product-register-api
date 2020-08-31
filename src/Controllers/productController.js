@@ -13,6 +13,35 @@ async function getAll(req, res) {
   }
 }
 
+async function update(req, res) {
+  try {
+    await productsModel.findByIdAndUpdate(req.params.id, {
+      $set: {
+        title: req.body.title,
+        price: req.body.price,
+        description: req.body.description,
+      },
+    })
+
+    res.status(200).send({ Menssagem: 'Produto atualizado com sucesso!' })
+  } catch (error) {
+    res.status(200).send({ Menssagem: ' erro Produto não atualizado!' })
+  }
+}
+
+async function getById(req, res) {
+  try {
+    const data = await productsModel.findById(
+      req.params.id,
+      'title price image'
+    )
+
+    return res.status(200).send(data)
+  } catch (error) {
+    return res.stuatus(400).send({ error })
+  }
+}
+
 // async function deleteAll() {
 //   try {
 //     await productsModel.deleteMany()
@@ -42,4 +71,4 @@ async function create(req, res) {
   }
 }
 
-export default { getAll, create }
+export default { getAll, create, update, getById }
