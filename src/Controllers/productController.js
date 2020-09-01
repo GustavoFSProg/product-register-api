@@ -31,10 +31,7 @@ async function update(req, res) {
 
 async function getById(req, res) {
   try {
-    const data = await productsModel.findById(
-      req.params.id,
-      'title price image'
-    )
+    const data = await productsModel.findById(req.params.id)
 
     return res.status(200).send(data)
   } catch (error) {
