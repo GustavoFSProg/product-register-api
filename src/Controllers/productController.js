@@ -39,14 +39,14 @@ async function getById(req, res) {
   }
 }
 
-// async function deleteAll() {
-//   try {
-//     await productsModel.deleteMany()
-//     return res.send('Donw deleteall')
-//   } catch (error) {
-//     return error
-//   }
-// }
+async function removerProduto(req, res) {
+  try {
+    await productsModel.findByIdAndRemove(req.params.id)
+    return res.send('Produto deletado com sucesso!')
+  } catch (error) {
+    return error
+  }
+}
 
 async function create(req, res) {
   try {
@@ -68,4 +68,4 @@ async function create(req, res) {
   }
 }
 
-export default { getAll, create, update, getById }
+export default { getAll, create, update, getById, removerProduto }

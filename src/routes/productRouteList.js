@@ -12,7 +12,7 @@ const productRouteList = [
   routes.get('/products/:id', productController.getById),
   routes.post('/post', upload.single('image'), productController.create),
   routes.put('/products/update/:id', productController.update),
-  // routes.delete('/del', productController.deleteAll),
+  routes.delete('/products/del/:id', productController.removerProduto),
 ]
 
 export default productRouteList
