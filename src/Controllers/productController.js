@@ -1,7 +1,4 @@
 import productsModel from '../Models/productModel'
-import multer from 'multer'
-import sharp from 'sharp'
-import fs from 'fs'
 
 async function getAll(req, res) {
   try {
@@ -64,7 +61,7 @@ async function create(req, res) {
 
     return res.status(201).send({ msg: 'Product created successfully' })
   } catch (error) {
-    return res.status(400).send({ error: error })
+    return res.status(400).send({ error })
   }
 }
 

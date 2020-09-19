@@ -1,9 +1,9 @@
 import express from 'express'
 import cors from 'cors'
 import mongoose from 'mongoose'
-import routeList from './routes/indexRoutes'
 import dotenv from 'dotenv'
 import path from 'path'
+import routeList from './routes/indexRoutes'
 
 dotenv.config()
 
